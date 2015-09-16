@@ -1,5 +1,6 @@
 package com.google.plus.tests;
 
+import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -109,54 +110,50 @@ public void awaitChatMessage()
 
 	int count = 0;
 	int maxTries = 1000;
+	List<WebElement> account = null; 
+	List<WebElement> iframes = null; 
 	while(true) {
 	    try {
+	    	/*
+	    	 * Check all the available divs with talk_chat_widget 
+	    	 * 
+	    	 * then check iframes available
+	    	 * 
+	    	 * then store this
+	    	 * 
+	    	 * if the change is name or size re-update. But continue the process.
+	    	 * 
+	    	 *  
+	    	 */
 	    	
-	    	//Class file for the Hangouts PopUps in the system. 
+	    	account = driver.findElements(By.cssSelector(".talk_chat_widget"));
+	    	Iterator<WebElement> itr = account.iterator();
 	    	
-	    	//Now this is a critical parameter for the system as it currently doesn't let anything that follows it to be executed 
-	    	//as it doesn't pass the elements inspection.
-	    	
-	    	
-	    	//wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("//*[contains(@class,'Xv yR uq')]")));
-	    	//wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[contains(concat(' ',normalize-space(@class),' '),'Xv yR uq Q')]")));
-	    	
-	    	//This needs to be resolved. 
-	    	WebElement button= driver.findElement(By.cssSelector(".Xv.yR.uq"));
-	    	button.click();
-	    	//wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[contains(@class,'Xv yR uq')]")));
-	    	
-	    	//WebElement element= fluentWait(By.cssSelector(":99"));
-	    	
-	    	//Get all the elements with the name of the specified file. 
-	    	System.out.println("Wait the Elements");
-	    	
-	    	//List <WebElement> elements = driver.findElements(By.className(".Xv.yR.uq.Q"));
-	    	
-	    	//for (WebElement element : elements)
-	    	//{
-	    	//	System.out.println(element.getAttribute("title"));
-	    	//}
-	    	//Now the trick is getting the button with the title Video Call to start a video call. 
-	    	
-	    	//WebElement answerButton= driver.findElement(By.cssSelector(".LbWtad.cmX6We.Wxsg2c.hH1ADf.z-b-G"));
-	    	
-	    	//answerButton.click();
-	    	
-	    	System.out.println("Okay It Detects the button");
-	    	break;
-	    } catch(Exception e) {
-	        // handle exception
-	    	if(e.getClass().toString().contains("Time"))
+	    	while(itr.hasNext())
+	    	{
+	    		WebElement web= itr.next();
+	    		WebElement ifm; 
+	    		//to do some overkill
+	    		if(web.getTagName().equals("div"))
+	    		{
+	    			//wait.until(ExpectedConditions.presenceOfElementLocated(web));
+	    			//Now get the elements ehre
+	    			iframes = web.findElements(By.tagName("iframe"));
+	    			
+	    			
+	    		}
+	    		//web.findElement(arg0);
+	    	}
+	    	System.out.printf("Number of items %d \n", iframes.size());
+//	    	Iterator<WebElement> iftr= iframes.iterator();
+//	    	while(iftr.hasNext())
+//	    	{
+//	    		System.out.printf("iframe with %s \n",iftr.next().getClass().getName());
+//	    	}
+	    } catch(TimeoutException e) {
 	    	System.out.printf("Count now Reached %d \n",count);
-	    	try {
-				Thread.sleep(1000);
-			} catch (InterruptedException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			}
 	        if (++count == maxTries) 
-	        	//throw e;
+	        	throw e;
 	        	{}
 	    }
 	}
