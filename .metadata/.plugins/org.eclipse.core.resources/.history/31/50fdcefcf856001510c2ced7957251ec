@@ -1,0 +1,83 @@
+package com.google.plus.tests;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.Assert;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+public class Accept_Calls {
+
+	private WebDriver driver; 
+//@BeforeSuite
+
+//@BeforeTest	
+	
+@BeforeClass
+public void setup(){
+	driver = new FirefoxDriver(); 
+}
+@AfterClass
+public void teardown() {
+	driver.close(); 
+}
+@BeforeMethod
+public void checkROS(){
+//initallize the ROS structure. 
+}
+@AfterMethod
+public void deactiveDocker(){
+//deinitallize the Docker	
+}
+
+@Test()
+public void signInloadPage()
+{
+	String emailId= "sophia.v1.api@gmail.com"; 
+	String passwd= "v12345678";
+	driver.get("https://plus.google.com");
+	//Insert code for sign in Sophia. 
+	WebElement account= driver.findElement(By.cssSelector("#Email"));
+	account.sendKeys(emailId);
+	Assert.assertEquals(account.getAttribute("value"), emailId);
+	System.out.println("Email Entered");
+	
+	account= driver.findElement(By.cssSelector("#next"));
+	account.click();
+	
+	try {
+		Thread.sleep(1000);
+	} catch (InterruptedException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	account = driver.findElement(By.cssSelector("#email-display"));
+	Assert.assertEquals(account.getAttribute("value"), emailId);
+	
+	
+	//Now check whether the element is signed in. 
+	
+	account = driver.findElement(By.cssSelector("#Passwd"));
+	account.sendKeys(passwd);
+	
+	//Now Check the follow to this. 
+	
+	
+	
+	Assert.assertEquals(driver.getTitle(), "Google+");
+	
+}
+@Test(dependsOnMethods="signInloadPage")
+public void checkUserSophia()
+{
+	String userName= "Sophia V";
+	WebElement userID= driver.findElement(By.cssSelector(".gb_P.gb_R"));
+	System.out.println(userID.getText());
+	Assert.assertEquals(userID.getText(), userName);
+}
+}

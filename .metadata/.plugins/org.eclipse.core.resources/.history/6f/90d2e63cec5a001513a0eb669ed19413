@@ -1,0 +1,5 @@
+package com.google.plus.tests;
+
+public class FluentWaitForWebElement {
+
+}

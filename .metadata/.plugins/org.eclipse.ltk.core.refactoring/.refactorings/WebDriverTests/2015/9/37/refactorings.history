@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.google.plus.tests.Login_Tests&apos; to &apos;Accept_Calls&apos;&#x0A;- Original project: &apos;WebDriverTests&apos;&#x0A;- Original element: &apos;com.google.plus.tests.Login_Tests&apos;&#x0A;- Renamed element: &apos;com.google.plus.tests.Accept_Calls&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Login_Tests&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src\/main\/java&lt;com.google.plus.tests{Login_Tests.java[Login_Tests" matchStrategy="1" name="Accept_Calls" qualified="false" references="true" similarDeclarations="false" stamp="1441791216026" textual="false" version="1.0"/>
+</session>
