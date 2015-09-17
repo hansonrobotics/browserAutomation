@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>2/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Wed Sep 16 15:37:27 EAT 2015</td>
+<td>Started on:</td><td>Thu Sep 17 10:58:06 EAT 2015</td>
 </tr>
-<tr><td>Total time:</td><td>65 seconds (65069 ms)</td>
+<tr><td>Total time:</td><td>111 seconds (111090 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,27 +76,26 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='com.google.plus.tests.Accept_Calls.awaitChatMessage()'><b>awaitChatMessage</b><br>Test class: com.google.plus.tests.Accept_Calls</td>
-<td><div><pre>org.openqa.selenium.NoSuchWindowException: Window not found. The browser window may have been closed.
-Command duration or timeout: 336 milliseconds
+<td><div><pre>org.openqa.selenium.NoSuchElementException: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;.Xv.yR.uq.Q&quot;}
+Command duration or timeout: 4 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;2.47.1&apos;, revision: &apos;unknown&apos;, time: &apos;2015-07-30 11:02:44&apos;
 System info: host: &apos;icoglabs-OptiPlex-7010&apos;, ip: &apos;127.0.1.1&apos;, os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;3.13.0-61-generic&apos;, java.version: &apos;1.7.0_79&apos;
-*** Element info: {Using=tag name, value=iframe}
-Session ID: 90418270-2ab7-4d0b-bb2c-868cab45f8bd
+*** Element info: {Using=css selector, value=.Xv.yR.uq.Q}
+Session ID: 767e6ad7-9038-4504-b372-030a34c0695f
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
 Capabilities [{platform=LINUX, acceptSslCerts=true, javascriptEnabled=true, cssSelectorsEnabled=true, databaseEnabled=true, browserName=firefox, handlesAlerts=true, nativeEvents=false, webStorageEnabled=true, rotatable=false, locationContextEnabled=true, applicationCacheEnabled=true, takesScreenshot=true, version=39.0}]
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.GeneratedConstructorAccessor12.newInstance(Unknown Source)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
 	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
 	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
 	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:595)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:273)
-	at org.openqa.selenium.remote.RemoteWebElement.findElements(RemoteWebElement.java:192)
-	at org.openqa.selenium.remote.RemoteWebElement.findElementsByTagName(RemoteWebElement.java:269)
-	at org.openqa.selenium.By$ByTagName.findElements(By.java:324)
-	at org.openqa.selenium.remote.RemoteWebElement.findElements(RemoteWebElement.java:168)
-	at com.google.plus.tests.Accept_Calls.awaitChatMessage(Accept_Calls.java:141)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:348)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByCssSelector(RemoteWebDriver.java:437)
+	at org.openqa.selenium.By$ByCssSelector.findElement(By.java:426)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:340)
+	at com.google.plus.tests.Accept_Calls.awaitChatMessage(Accept_Calls.java:175)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -121,43 +120,37 @@ Capabilities [{platform=LINUX, acceptSslCerts=true, javascriptEnabled=true, cssS
 	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:112)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:205)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:176)
-Caused by: org.openqa.selenium.NoSuchWindowException: Window not found. The browser window may have been closed.
+Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;.Xv.yR.uq.Q&quot;}
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;2.47.1&apos;, revision: &apos;unknown&apos;, time: &apos;2015-07-30 11:02:44&apos;
 System info: host: &apos;icoglabs-OptiPlex-7010&apos;, ip: &apos;127.0.1.1&apos;, os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;3.13.0-61-generic&apos;, java.version: &apos;1.7.0_79&apos;
 Driver info: driver.version: unknown
-	at &lt;anonymous class&gt;.nsCommandProcessor.prototype.execute(file:///tmp/anonymous471168303364616664webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12711)
-	at &lt;anonymous class&gt;.Dispatcher.executeAs/&lt;(file:///tmp/anonymous471168303364616664webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:9456)
-	at &lt;anonymous class&gt;.Resource.prototype.handle(file:///tmp/anonymous471168303364616664webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:9603)
-	at &lt;anonymous class&gt;.Dispatcher.prototype.dispatch(file:///tmp/anonymous471168303364616664webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:9550)
-	at &lt;anonymous class&gt;.WebDriverServer/&lt;.handle(file:///tmp/anonymous471168303364616664webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:12497)
-	at &lt;anonymous class&gt;.createHandlerFunc/&lt;(file:///tmp/anonymous471168303364616664webdriver-profile/extensions/fxdriver@googlecode.com/components/httpd.js:2054)
-	at &lt;anonymous class&gt;.ServerHandler.prototype.handleResponse(file:///tmp/anonymous471168303364616664webdriver-profile/extensions/fxdriver@googlecode.com/components/httpd.js:2387)
-	at &lt;anonymous class&gt;.Connection.prototype.process(file:///tmp/anonymous471168303364616664webdriver-profile/extensions/fxdriver@googlecode.com/components/httpd.js:1223)
-	at &lt;anonymous class&gt;.RequestReader.prototype._handleResponse(file:///tmp/anonymous471168303364616664webdriver-profile/extensions/fxdriver@googlecode.com/components/httpd.js:1677)
-	at &lt;anonymous class&gt;.RequestReader.prototype._processBody(file:///tmp/anonymous471168303364616664webdriver-profile/extensions/fxdriver@googlecode.com/components/httpd.js:1525)
-	at &lt;anonymous class&gt;.RequestReader.prototype.onInputStreamReady(file:///tmp/anonymous471168303364616664webdriver-profile/extensions/fxdriver@googlecode.com/components/httpd.js:1393)
-</pre></div><a href='#' onClick='toggleBox("stack-trace217580782", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace217580782'><pre>org.openqa.selenium.NoSuchWindowException: Window not found. The browser window may have been closed.
-Command duration or timeout: 336 milliseconds
+	at &lt;anonymous class&gt;.FirefoxDriver.prototype.findElementInternal_(file:///tmp/anonymous3245405843857271064webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10667)
+	at &lt;anonymous class&gt;.FirefoxDriver.prototype.findElement(file:///tmp/anonymous3245405843857271064webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10676)
+	at &lt;anonymous class&gt;.DelayedCommand.prototype.executeInternal_/h(file:///tmp/anonymous3245405843857271064webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12643)
+	at &lt;anonymous class&gt;.DelayedCommand.prototype.executeInternal_(file:///tmp/anonymous3245405843857271064webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12648)
+	at &lt;anonymous class&gt;.DelayedCommand.prototype.execute/&lt;(file:///tmp/anonymous3245405843857271064webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12590)
+</pre></div><a href='#' onClick='toggleBox("stack-trace602444695", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace602444695'><pre>org.openqa.selenium.NoSuchElementException: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;.Xv.yR.uq.Q&quot;}
+Command duration or timeout: 4 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;2.47.1&apos;, revision: &apos;unknown&apos;, time: &apos;2015-07-30 11:02:44&apos;
 System info: host: &apos;icoglabs-OptiPlex-7010&apos;, ip: &apos;127.0.1.1&apos;, os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;3.13.0-61-generic&apos;, java.version: &apos;1.7.0_79&apos;
-*** Element info: {Using=tag name, value=iframe}
-Session ID: 90418270-2ab7-4d0b-bb2c-868cab45f8bd
+*** Element info: {Using=css selector, value=.Xv.yR.uq.Q}
+Session ID: 767e6ad7-9038-4504-b372-030a34c0695f
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
 Capabilities [{platform=LINUX, acceptSslCerts=true, javascriptEnabled=true, cssSelectorsEnabled=true, databaseEnabled=true, browserName=firefox, handlesAlerts=true, nativeEvents=false, webStorageEnabled=true, rotatable=false, locationContextEnabled=true, applicationCacheEnabled=true, takesScreenshot=true, version=39.0}]
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.GeneratedConstructorAccessor12.newInstance(Unknown Source)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
 	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
 	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
 	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:595)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:273)
-	at org.openqa.selenium.remote.RemoteWebElement.findElements(RemoteWebElement.java:192)
-	at org.openqa.selenium.remote.RemoteWebElement.findElementsByTagName(RemoteWebElement.java:269)
-	at org.openqa.selenium.By$ByTagName.findElements(By.java:324)
-	at org.openqa.selenium.remote.RemoteWebElement.findElements(RemoteWebElement.java:168)
-	at com.google.plus.tests.Accept_Calls.awaitChatMessage(Accept_Calls.java:141)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:348)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByCssSelector(RemoteWebDriver.java:437)
+	at org.openqa.selenium.By$ByCssSelector.findElement(By.java:426)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:340)
+	at com.google.plus.tests.Accept_Calls.awaitChatMessage(Accept_Calls.java:175)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -182,24 +175,19 @@ Capabilities [{platform=LINUX, acceptSslCerts=true, javascriptEnabled=true, cssS
 	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:112)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:205)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:176)
-Caused by: org.openqa.selenium.NoSuchWindowException: Window not found. The browser window may have been closed.
+Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;.Xv.yR.uq.Q&quot;}
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;2.47.1&apos;, revision: &apos;unknown&apos;, time: &apos;2015-07-30 11:02:44&apos;
 System info: host: &apos;icoglabs-OptiPlex-7010&apos;, ip: &apos;127.0.1.1&apos;, os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;3.13.0-61-generic&apos;, java.version: &apos;1.7.0_79&apos;
 Driver info: driver.version: unknown
-	at &lt;anonymous class&gt;.nsCommandProcessor.prototype.execute(file:///tmp/anonymous471168303364616664webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12711)
-	at &lt;anonymous class&gt;.Dispatcher.executeAs/&lt;(file:///tmp/anonymous471168303364616664webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:9456)
-	at &lt;anonymous class&gt;.Resource.prototype.handle(file:///tmp/anonymous471168303364616664webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:9603)
-	at &lt;anonymous class&gt;.Dispatcher.prototype.dispatch(file:///tmp/anonymous471168303364616664webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:9550)
-	at &lt;anonymous class&gt;.WebDriverServer/&lt;.handle(file:///tmp/anonymous471168303364616664webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:12497)
-	at &lt;anonymous class&gt;.createHandlerFunc/&lt;(file:///tmp/anonymous471168303364616664webdriver-profile/extensions/fxdriver@googlecode.com/components/httpd.js:2054)
-	at &lt;anonymous class&gt;.ServerHandler.prototype.handleResponse(file:///tmp/anonymous471168303364616664webdriver-profile/extensions/fxdriver@googlecode.com/components/httpd.js:2387)
-	at &lt;anonymous class&gt;.Connection.prototype.process(file:///tmp/anonymous471168303364616664webdriver-profile/extensions/fxdriver@googlecode.com/components/httpd.js:1223)
-	at &lt;anonymous class&gt;.RequestReader.prototype._handleResponse(file:///tmp/anonymous471168303364616664webdriver-profile/extensions/fxdriver@googlecode.com/components/httpd.js:1677)
-	at &lt;anonymous class&gt;.RequestReader.prototype._processBody(file:///tmp/anonymous471168303364616664webdriver-profile/extensions/fxdriver@googlecode.com/components/httpd.js:1525)
-	at &lt;anonymous class&gt;.RequestReader.prototype.onInputStreamReady(file:///tmp/anonymous471168303364616664webdriver-profile/extensions/fxdriver@googlecode.com/components/httpd.js:1393)
+	at &lt;anonymous class&gt;.FirefoxDriver.prototype.findElementInternal_(file:///tmp/anonymous3245405843857271064webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10667)
+	at &lt;anonymous class&gt;.FirefoxDriver.prototype.findElement(file:///tmp/anonymous3245405843857271064webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10676)
+	at &lt;anonymous class&gt;.DelayedCommand.prototype.executeInternal_/h(file:///tmp/anonymous3245405843857271064webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12643)
+	at &lt;anonymous class&gt;.DelayedCommand.prototype.executeInternal_(file:///tmp/anonymous3245405843857271064webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12648)
+	at &lt;anonymous class&gt;.DelayedCommand.prototype.execute/&lt;(file:///tmp/anonymous3245405843857271064webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12590)
 </pre></div></td>
-<td>36</td>
-<td>com.google.plus.tests.Accept_Calls@5e7e6ceb</td></tr>
+<td>83</td>
+<td>com.google.plus.tests.Accept_Calls@272b479b</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
@@ -212,12 +200,12 @@ Driver info: driver.version: unknown
 <td title='com.google.plus.tests.Accept_Calls.checkUserSophia()'><b>checkUserSophia</b><br>Test class: com.google.plus.tests.Accept_Calls</td>
 <td></td>
 <td>0</td>
-<td>com.google.plus.tests.Accept_Calls@5e7e6ceb</td></tr>
+<td>com.google.plus.tests.Accept_Calls@272b479b</td></tr>
 <tr>
 <td title='com.google.plus.tests.Accept_Calls.signInloadPage()'><b>signInloadPage</b><br>Test class: com.google.plus.tests.Accept_Calls</td>
 <td></td>
-<td>24</td>
-<td>com.google.plus.tests.Accept_Calls@5e7e6ceb</td></tr>
+<td>22</td>
+<td>com.google.plus.tests.Accept_Calls@272b479b</td></tr>
 </table><p>
 </body>
 </html>

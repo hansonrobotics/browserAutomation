@@ -1,5 +1,6 @@
 package com.google.plus.tests;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -34,7 +35,7 @@ public class Accept_Calls {
 @BeforeClass
 public void setup(){
 	driver = new FirefoxDriver(); 
-	wait = new WebDriverWait(driver, 15);
+	wait = new WebDriverWait(driver, 10);
 	
 }
 @AfterClass
@@ -110,50 +111,79 @@ public void awaitChatMessage()
 
 	int count = 0;
 	int maxTries = 1000;
-	List<WebElement> account = null; 
-	List<WebElement> iframes = null; 
+
 	while(true) {
 	    try {
-	    	/*
-	    	 * Check all the available divs with talk_chat_widget 
-	    	 * 
-	    	 * then check iframes available
-	    	 * 
-	    	 * then store this
-	    	 * 
-	    	 * if the change is name or size re-update. But continue the process.
-	    	 * 
-	    	 *  
-	    	 */
-	    	
+	    	List<WebElement> account = null; 
+	    	List<WebElement> iframes = null; 
+	    	List<String> divs_names = new ArrayList<String>();
+	    	driver.switchTo().defaultContent();
 	    	account = driver.findElements(By.cssSelector(".talk_chat_widget"));
 	    	Iterator<WebElement> itr = account.iterator();
 	    	
 	    	while(itr.hasNext())
 	    	{
 	    		WebElement web= itr.next();
-	    		WebElement ifm; 
-	    		//to do some overkill
-	    		if(web.getTagName().equals("div"))
+	    		WebElement ifm;
+	    		//To avoid the preload functionality for the hangout widget. 
+	    		if(!web.getAttribute("id").equals("preld_m"))
 	    		{
+	    			System.out.println(web.getAttribute("id"));
+	    			divs_names.add(web.getAttribute("id"));
+	    		}
+	    		
+	    		
 	    			//wait.until(ExpectedConditions.presenceOfElementLocated(web));
 	    			//Now get the elements ehre
-	    			iframes = web.findElements(By.tagName("iframe"));
-	    			
-	    			
-	    		}
+	    		//iframes = web.findElements(By.tagName("iframe"));
+
 	    		//web.findElement(arg0);
 	    	}
-	    	System.out.printf("Number of items %d \n", iframes.size());
-//	    	Iterator<WebElement> iftr= iframes.iterator();
-//	    	while(iftr.hasNext())
-//	    	{
-//	    		System.out.printf("iframe with %s \n",iftr.next().getClass().getName());
-//	    	}
-	    } catch(TimeoutException e) {
+	    	if(divs_names != null && divs_names.size() != 0)
+	    	{
+	    	Iterator<String> str = divs_names.iterator();
+	    	System.out.printf("Size of the divs %d \n",divs_names.size());
+	    	while(str.hasNext())
+	    	{
+	    		//Concurrency is needed here.
+	    		/*
+	    		 * Do some processing to get a perfect value for item.
+	    		 * 
+	    		 *  Currently the values are obtained from the name of div element it contains
+	    		 *  it so. As it stands now in September 16, 2015 the iframes have the same name
+	    		 *  up to _m part of the element name.  
+	    		 */
+	    		String frame_name = str.next();
+	    		int value = frame_name.lastIndexOf("_");
+	    		frame_name=frame_name.substring(0, value);
+	    		//This is the problem. 
+	    		
+	    		//wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(frame_name));
+	    		//WebElement iframe = driver.findElement(By.cssSelector(frame_name));
+	    		
+	    		driver.switchTo().frame(frame_name);
+	    		
+	    		//driver.switchTo().f
+	    		//System.out.println(driver.getPageSource());
+	    		System.out.printf("Context Switched %s \n",frame_name);
+	    	}
+	    	//Now the context have been switch indicating the above function has to make 
+	    	//a wait for the system.
+	    	
+	    	
+	    	wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".Xv.yR.uq.Q")));
+	    	WebElement button = driver.findElement(By.cssSelector(".Xv.yR.uq.Q"));
+	    	//WebElement button = fluentWait(By.cssSelector("Xv.yR.uq.Q"));
+	    	button.click();
+	    	} else
+				System.out.println("No Calls Currently");
+	    } 
+    
+
+	    catch(TimeoutException e) {
 	    	System.out.printf("Count now Reached %d \n",count);
 	        if (++count == maxTries) 
-	        	throw e;
+	        	//throw e;
 	        	{}
 	    }
 	}
